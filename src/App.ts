@@ -1,4 +1,4 @@
-import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
+import { Plugin } from 'obsidian';
 import _metascraper from 'metascraper'
 import msAuthor from 'metascraper-author'
 import msDate from 'metascraper-date'
@@ -8,7 +8,6 @@ import msURL from 'metascraper-url'
 // import got from 'got'
 
 import { ArticleScraperSettings, DEFAULT_SETTINGS } from './Settings'
-// import type { ArticleScraperSettings } from './Settings'
 
 type MetascraperInputType = {
   html: string;
@@ -25,14 +24,15 @@ export default class ArticleScraper extends Plugin {
   }
 
   async loadSettings() {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    const settingsData = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    this.settings = settingsData
   }
 
   async saveSettings() {
     await this.saveData(this.settings);
   }
 
-  async url(url: string) {
+  async fetchData(url: string) {
     // const { body: html, url } = await got(this._url)
     const resPromise = await fetch(url)
     const html = await resPromise.text()
