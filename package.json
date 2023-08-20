@@ -2,7 +2,7 @@
 	"name": "obsidian-sample-plugin",
 	"version": "1.0.0",
 	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
-	"main": "main.js",
+	"main": "dist/main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
@@ -20,5 +20,14 @@
 		"obsidian": "latest",
 		"tslib": "2.4.0",
 		"typescript": "4.7.4"
+	},
+	"dependencies": {
+		"metascraper": "^5.36.0",
+		"metascraper-author": "^5.36.0",
+		"metascraper-date": "^5.36.0",
+		"metascraper-description": "^5.36.0",
+		"metascraper-title": "^5.36.0",
+		"metascraper-url": "^5.36.0",
+		"punycode/": "^2.3.0"
 	}
 }
