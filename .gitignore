@@ -22,4 +22,4 @@ data.json
 .DS_Store
 
 # ignore build files
-dist/
+dist/*
