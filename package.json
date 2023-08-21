@@ -1,11 +1,11 @@
 {
 	"name": "obsidian-sample-plugin",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "This is an information scraper for web pages/articles",
 	"main": "dist/main.js",
 	"scripts": {
-		"dev": "node esbuild.config.mjs",
-		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+        "dev": "node esbuild.config.mjs",
+        "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
 		"version": "node version-bump.mjs && git add manifest.json versions.json"
 	},
 	"keywords": [],
@@ -16,7 +16,7 @@
 		"@typescript-eslint/eslint-plugin": "5.29.0",
 		"@typescript-eslint/parser": "5.29.0",
 		"builtin-modules": "3.3.0",
-		"esbuild": "0.17.3",
+		"esbuild": "^0.19.2",
 		"obsidian": "latest",
 		"tslib": "2.4.0",
 		"typescript": "4.7.4"
@@ -33,8 +33,6 @@
 		"metascraper-logo-favicon": "^5.36.0",
 		"metascraper-publisher": "^5.36.0",
 		"metascraper-title": "^5.36.0",
-		"metascraper-url": "^5.36.0",
-		"punycode": "^2.3.0",
-		"punycode/": "^2.3.0"
+		"metascraper-url": "^5.36.0"
 	}
 }

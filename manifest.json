@@ -1,9 +1,9 @@
 {
-	"id": "article-scraper",
-	"name": "Article Scraper",
+	"id": "obsidian-page-scraper",
+	"name": "Web Page Scraper",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "This is an information scraper for web articles.",
+	"description": "This is an information scraper for web pages/articles.",
 	"author": "Thaki Chowdhury",
 	"authorUrl": "https://thakichowdhury.com",
 	"isDesktopOnly": false
