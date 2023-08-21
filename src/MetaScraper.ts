@@ -10,12 +10,12 @@ import logo from 'metascraper-logo'
 import publisher from 'metascraper-publisher'
 import feed from 'metascraper-feed'
 import favicon from 'metascraper-logo-favicon'
-import type { ArticleScraperSettingsType } from './Settings'
+import type { WebScraperSettingsType } from './Settings'
 
 export default class MetaScraper {
-  private _fields: ArticleScraperSettingsType
+  private _fields: WebScraperSettingsType
 
-  constructor({ fields }: { fields: ArticleScraperSettingsType }) {
+  constructor({ fields }: { fields: WebScraperSettingsType }) {
     this._fields = fields
   }
 
@@ -42,7 +42,7 @@ export default class MetaScraper {
     
     // return only field scrapers that are enabled in plugin settings 
     return Object.keys(_fieldScrapers)
-      .filter((field: keyof ArticleScraperSettingsType) => this._fields[field])
+      .filter((field: keyof WebScraperSettingsType) => this._fields[field])
       .map((field: keyof typeof _fieldScrapers) => _fieldScrapers[field]())
   }
 }
