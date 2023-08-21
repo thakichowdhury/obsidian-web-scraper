@@ -26,7 +26,7 @@ export default class ArticleScraper extends Plugin {
 
     const scraper = new MetaScraper({ fields: this.settings }).scraper
     const metadata = await scraper({ html, url })
-    console.log(metadata)
+    console.log(`Metadata for ${url}:`, metadata)
 
     return metadata
   }
