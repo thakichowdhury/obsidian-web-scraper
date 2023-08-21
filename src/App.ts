@@ -1,13 +1,7 @@
-import { Plugin } from 'obsidian';
-import _metascraper from 'metascraper'
-import msAuthor from 'metascraper-author'
-import msDate from 'metascraper-date'
-import msDescription from 'metascraper-description'
-import msTitle from 'metascraper-title'
-import msURL from 'metascraper-url'
-// import got from 'got'
+import { Plugin, request } from 'obsidian';
 
-import { ArticleScraperSettings, DEFAULT_SETTINGS } from './Settings'
+import { ArticleScraperSettings, ArticleScraperSettingsType, DEFAULT_SETTINGS } from './Settings'
+import MetaScraper from './MetaScraper';
 
 type MetascraperInputType = {
   html: string;
@@ -15,7 +9,7 @@ type MetascraperInputType = {
 }
 
 export default class ArticleScraper extends Plugin {
-  settings: ArticleScraperSettings;
+  settings: ArticleScraperSettingsType;
 
   async onload() {
     await this.loadSettings();
@@ -33,23 +27,30 @@ export default class ArticleScraper extends Plugin {
   }
 
   async fetchData(url: string) {
-    // const { body: html, url } = await got(this._url)
-    const resPromise = await fetch(url)
-    const html = await resPromise.text()
+    const html = await request(url)
 
     const metadata = await this._scraper({ html, url })
     console.log(metadata)
     return metadata
   }
 
-  _scraper({ html, url }: MetascraperInputType) {
-    const scraper = _metascraper([
-      msAuthor(),
-      msDate(),
-      msDescription(),
-      msTitle(),
-      msURL()
-    ])
-    return scraper({ html, url })
+  private _scraper({ html, url }: MetascraperInputType) {
+    const metaScraper = new MetaScraper({ fields: this.settings }).scraper
+    return metaScraper({ html, url })
   }
+
+  // private _fieldScrapers() {
+  //   const fieldScrapers = {
+  //     author: msAuthor(),
+  //     publishedDate: msDate(),
+  //     description: msDescription(),
+  //     title: msTitle(),
+  //     link: msURL()
+  //   }
+    
+  //   // return Object.keys(fieldScrapers).filter((field) => this.settings[field as keyof ArticleScraperSettingsType])
+  //   return Object.keys(fieldScrapers)
+  //     .filter((field) => this.settings[field as keyof ArticleScraperSettingsType])
+  //     .map((field) => fieldScrapers[field as keyof typeof fieldScrapers])
+  // }
 }
