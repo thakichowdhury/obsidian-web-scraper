@@ -45,7 +45,7 @@ export class ArticleScraperSettings extends PluginSettingTab {
 
     new Setting(this._container)
       .setName(keyTitleCase)
-      .setDesc(`Fetch the article's ${keyTitleCase}.`)
+      .setDesc(`Fetch article ${keyTitleCase.toLowerCase()}.`)
       .addToggle((val) =>
         val
           .setValue(this.plugin.settings[settingKey])
