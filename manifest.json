@@ -1,7 +1,7 @@
 {
 	"id": "obsidian-page-scraper",
 	"name": "Web Page Scraper",
-	"version": "1.0.0",
+	"version": "1.13.0",
 	"minAppVersion": "0.15.0",
 	"description": "This is an information scraper for web pages/articles.",
 	"author": "Thaki Chowdhury",
