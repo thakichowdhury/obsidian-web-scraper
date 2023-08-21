@@ -19,7 +19,7 @@ Welcome to the official repository of the **Obsidian Web Scraper** plugin for [O
 
 ## Use Cases
 ### Integrate page data with the rest of your data using Obsidian Dataview
-https://githubcom/thakichowdhury/obsidian-article-scraper/assets/4053163/07d65774-9680-4540-9a24-d854b326188f
+https://github.com/thakichowdhury/obsidian-article-scraper/assets/4053163/07d65774-9680-4540-9a24-d854b326188f
 
 ### Combine this with your scripts, macros and templates using QuickAdd
 https://github.com/thakichowdhury/obsidian-article-scraper/assets/4053163/a598315d-0d03-440d-80a9-b07cda6ad9e4
