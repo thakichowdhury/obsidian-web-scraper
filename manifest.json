@@ -1,6 +1,6 @@
 {
-	"id": "obsidian-page-scraper",
-	"name": "Web Page Scraper",
+	"id": "obsidian-web-scraper",
+	"name": "Web Scraper",
 	"version": "1.13.0",
 	"minAppVersion": "0.15.0",
 	"description": "This is an information scraper for web pages/articles.",

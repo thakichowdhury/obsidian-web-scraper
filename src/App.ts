@@ -1,15 +1,15 @@
 import { Plugin, request } from 'obsidian';
 
-import { ArticleScraperSettings, ArticleScraperSettingsType, DEFAULT_SETTINGS } from './Settings'
+import { WebScraperSettings, WebScraperSettingsType, DEFAULT_SETTINGS } from './Settings'
 import MetaScraper from './MetaScraper';
 
-export default class ArticleScraper extends Plugin {
-  settings: ArticleScraperSettingsType;
+export default class WebScraper extends Plugin {
+  settings: WebScraperSettingsType;
 
   async onload() {
     await this.loadSettings();
 
-    this.addSettingTab(new ArticleScraperSettings(this.app, this));
+    this.addSettingTab(new WebScraperSettings(this.app, this));
   }
 
   async loadSettings() {
@@ -26,7 +26,7 @@ export default class ArticleScraper extends Plugin {
 
     const scraper = new MetaScraper({ fields: this.settings }).scraper
     const metadata = await scraper({ html, url })
-    console.log(metadata)
+    console.log(`Metadata for ${url}:`, metadata)
 
     return metadata
   }

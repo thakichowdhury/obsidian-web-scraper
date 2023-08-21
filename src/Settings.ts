@@ -1,7 +1,7 @@
-import ArticleScraper from "./App";
+import WebScraper from "./App";
 import { App, PluginSettingTab, Setting } from "obsidian";
 
-export interface ArticleScraperSettingsType {
+export interface WebScraperSettingsType {
   author: boolean;
   publishedDate: boolean;
   description: boolean,
@@ -15,7 +15,7 @@ export interface ArticleScraperSettingsType {
   favicon: boolean,
 }
 
-export const DEFAULT_SETTINGS: Partial<ArticleScraperSettingsType> = {
+export const DEFAULT_SETTINGS: Partial<WebScraperSettingsType> = {
   author: false,
   publishedDate: false,
   description: false,
@@ -30,17 +30,17 @@ export const DEFAULT_SETTINGS: Partial<ArticleScraperSettingsType> = {
 }
 
 
-export class ArticleScraperSettings extends PluginSettingTab {
-  plugin: ArticleScraper
+export class WebScraperSettings extends PluginSettingTab {
+  plugin: WebScraper
   _container: HTMLElement
 
-  constructor(app: App, plugin: ArticleScraper) {
+  constructor(app: App, plugin: WebScraper) {
     super(app, plugin);
     this.plugin = plugin;
     this._container = this.containerEl
   }
 
-  private _createSettingsToggle(settingKey: keyof ArticleScraperSettingsType) {
+  private _createSettingsToggle(settingKey: keyof WebScraperSettingsType) {
     const keyTitleCase = this._camelCaseToTitleCase(settingKey)
 
     new Setting(this._container)
@@ -68,6 +68,6 @@ export class ArticleScraperSettings extends PluginSettingTab {
 
     // create toggle setting for each field
     Object.keys(this.plugin.settings)
-      .forEach((settingKey: keyof ArticleScraperSettingsType) => this._createSettingsToggle(settingKey))
+      .forEach((settingKey: keyof WebScraperSettingsType) => this._createSettingsToggle(settingKey))
   }
 }
