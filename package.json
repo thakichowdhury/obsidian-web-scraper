@@ -1,5 +1,5 @@
 {
-	"name": "obsidian-article-scraper",
+	"name": "obsidian-web-scraper",
 	"version": "1.13.0",
 	"description": "This is an information scraper for web pages/articles",
 	"main": "dist/main.js",
