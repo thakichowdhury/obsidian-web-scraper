@@ -3,7 +3,7 @@
 	"name": "Web Scraper",
 	"version": "2.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "This is the web page/article scraper for all your note-taking needs!",
+	"description": "Scrape title, author, published date, and more from web pages and articles!",
 	"author": "Thaki Chowdhury",
 	"authorUrl": "https://www.thakichowdhury.com",
 	"isDesktopOnly": false
